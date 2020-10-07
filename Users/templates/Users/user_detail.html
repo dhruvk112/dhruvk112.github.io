@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+    <div class="jumbotron">
+        <h1 class="d-flex justify-content-center">Customer Details</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>{{ user_detail.name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user_detail.email }}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{ user_detail.gender }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ user_detail.address }}</td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td>{{ user_detail.date_of_birth }}</td>
+            </tr>
+            <tr>
+                <th>Balance</th>
+                <td>&#x20B9;{{ user_detail.balance }}</td>
+            </tr>
+        </table>
+    </div>
+    <p><a class="btn btn-primary" href="{% url 'users:transfer' pk=user_detail.pk%}">Transfer Money</a></p>
+{% endblock %}

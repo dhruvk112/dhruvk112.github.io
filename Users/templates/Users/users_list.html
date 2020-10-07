@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+    <div class="jumbotron">
+        <h1 class="d-flex justify-content-center">List of all customers</h1>
+        <table>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td><a class="btn btn-primary" href="{{ user.id }}">Details</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+    <div class="jumbotron">
+        <h1 class="d-flex justify-content-center">Transactions</h1>
+        <table>
+            <thead>
+                <th>From</th>
+                <th>To</th>
+                <th>Amount</th>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.person1 }}</td>
+                    <td>{{ transaction.person2 }}</td>
+                    <td>&#x20B9;{{ transaction.amount }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <h1><a class="btn btn-primary" href="{% url 'users:list' %}">View all Customers</a></h1>
+{% endblock %}
